@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { useRef } from "react";
 import house from "@/assets/card-house.jpg";
 import roadside from "@/assets/card-roadside.jpg";
 import poolPatio from "@/assets/card-pool-patio.jpg";
@@ -26,6 +27,14 @@ const cards = [
 ];
 
 export function Coziness() {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  const slide = (dir: 1 | -1) => {
+    const el = trackRef.current;
+    if (!el) return;
+    el.scrollBy({ left: dir * (el.clientWidth * 0.8), behavior: "smooth" });
+  };
+
   return (
     <section className="pt-28 sm:pt-40">
       <SectionHeading
@@ -51,15 +60,18 @@ export function Coziness() {
 
         <div>
           <Reveal className="mb-4 flex justify-end gap-2">
-            <CircleButton label="Previous image">
+            <CircleButton label="Previous image" onClick={() => slide(-1)}>
               <Arrow className="rotate-[225deg]" />
             </CircleButton>
-            <CircleButton label="Next image" variant="lime">
+            <CircleButton label="Next image" variant="lime" onClick={() => slide(1)}>
               <Arrow className="rotate-45" />
             </CircleButton>
           </Reveal>
 
-          <div className="-mx-5 flex snap-x gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
+          <div
+            ref={trackRef}
+            className="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0"
+          >
             {cards.map((c, i) => (
               <Reveal key={i} delay={i * 0.08} className="w-[78vw] shrink-0 snap-start sm:w-auto">
                 <motion.div whileHover={{ y: -3 }} transition={{ duration: 0.3 }}>

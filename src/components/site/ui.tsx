@@ -37,15 +37,18 @@ export function CircleButton({
   variant = "outline",
   className,
   label,
+  onClick,
 }: {
   children: ReactNode;
   variant?: "lime" | "outline" | "white";
   className?: string;
   label: string;
+  onClick?: () => void;
 }) {
   return (
     <motion.button
       aria-label={label}
+      onClick={onClick}
       whileHover={{ scale: 1.08 }}
       whileTap={{ scale: 0.95 }}
       transition={{ duration: 0.25 }}
