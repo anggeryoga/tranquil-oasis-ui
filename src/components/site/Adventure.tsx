@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import { useRef } from "react";
 import { Copy, Plus } from "lucide-react";
 import bentoPool from "@/assets/bento-pool.jpg";
 import bentoPlaces from "@/assets/bento-places.jpg";
@@ -96,14 +95,6 @@ function ImageCard({
 }
 
 export function Adventure() {
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  const slide = (dir: 1 | -1) => {
-    const el = trackRef.current;
-    if (!el) return;
-    el.scrollBy({ left: dir * (el.clientWidth * 0.82), behavior: "smooth" });
-  };
-
   return (
     <section className="pt-28 sm:pt-40">
       <SectionHeading
@@ -115,20 +106,8 @@ export function Adventure() {
         ]}
       />
 
-      <Reveal className="mt-8 flex justify-end gap-2 lg:hidden">
-        <CircleButton label="Previous card" onClick={() => slide(-1)}>
-          <Arrow className="rotate-[225deg]" />
-        </CircleButton>
-        <CircleButton label="Next card" variant="lime" onClick={() => slide(1)}>
-          <Arrow className="rotate-45" />
-        </CircleButton>
-      </Reveal>
-
-      <div
-        ref={trackRef}
-        className="no-scrollbar -mx-5 mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 lg:mx-0 lg:mt-14 lg:grid lg:grid-cols-12 lg:overflow-visible lg:px-0"
-      >
-        <Reveal className="w-[82vw] shrink-0 snap-start sm:w-[60vw] lg:w-auto lg:col-span-5">
+      <div className="mt-14 grid gap-4 lg:grid-cols-12">
+        <Reveal className="lg:col-span-5">
           <ImageCard
             src={bentoPool}
             alt="Turquoise private pool beside a modern desert house"
@@ -157,13 +136,13 @@ export function Adventure() {
           </ImageCard>
         </Reveal>
 
-        <Reveal delay={0.08} className="w-[82vw] shrink-0 snap-start sm:w-[60vw] lg:w-auto lg:col-span-3">
+        <Reveal delay={0.08} className="lg:col-span-3">
           <div className="h-[280px] sm:h-[320px] lg:mt-6 lg:h-[330px]">
             <OccupancyChart />
           </div>
         </Reveal>
 
-        <Reveal delay={0.16} className="w-[82vw] shrink-0 snap-start sm:w-[60vw] lg:w-auto lg:col-span-2">
+        <Reveal delay={0.16} className="lg:col-span-2">
           <ImageCard
             src={bentoPlaces}
             alt="Ice cream truck on a quiet desert street"
@@ -173,7 +152,7 @@ export function Adventure() {
           />
         </Reveal>
 
-        <Reveal delay={0.24} className="w-[82vw] shrink-0 snap-start sm:w-[60vw] lg:w-auto lg:col-span-2">
+        <Reveal delay={0.24} className="lg:col-span-2">
           <ImageCard
             src={bentoParking}
             alt="Carport with a vintage car and desert landscaping"
