@@ -137,7 +137,7 @@ export function Adventure() {
         </Reveal>
 
         <Reveal delay={0.08} className="lg:col-span-3">
-          <div className="h-[300px] sm:h-[380px] lg:h-[420px]">
+          <div className="h-[280px] sm:h-[320px] lg:mt-6 lg:h-[330px]">
             <OccupancyChart />
           </div>
         </Reveal>
