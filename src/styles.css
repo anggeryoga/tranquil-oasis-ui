@@ -170,3 +170,11 @@
   backdrop-filter: blur(14px);
   box-shadow: 0 12px 40px -18px oklch(0.18 0 0 / 0.25);
 }
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
