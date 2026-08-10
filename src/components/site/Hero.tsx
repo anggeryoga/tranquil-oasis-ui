@@ -8,7 +8,7 @@ import { Arrow, CircleButton, Pill } from "./ui";
 const tags = [
   { label: "Solitude", top: "22%", left: "4%" },
   { label: "Enclave", top: "34%", left: "27%" },
-  { label: "Travel", top: "27%", left: "45%", lime: true },
+  { label: "Travel", top: "27%", left: "45%", accent: true },
   { label: "Scenic", top: "38%", left: "65%" },
   { label: "Haven", top: "18%", left: "86%" },
 ];
@@ -17,13 +17,13 @@ function FloatingTag({
   label,
   top,
   left,
-  lime,
+  accent,
   index,
 }: {
   label: string;
   top: string;
   left: string;
-  lime?: boolean;
+  accent?: boolean;
   index: number;
 }) {
   return (
@@ -40,9 +40,9 @@ function FloatingTag({
       <span className="grid size-5 place-items-center rounded-full bg-card/40 backdrop-blur-md">
         <span className="size-1.5 rounded-full bg-card" />
       </span>
-      <Pill as="div" variant={lime ? "lime" : "white"} className="h-7 px-3">
+      <Pill as="div" variant={accent ? "accent" : "white"} className="h-7 px-3">
         {label}
-        {lime ? <Arrow /> : null}
+        {accent ? <Arrow /> : null}
       </Pill>
     </motion.div>
   );
