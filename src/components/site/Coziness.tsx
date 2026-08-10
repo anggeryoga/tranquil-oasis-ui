@@ -54,7 +54,7 @@ export function Coziness() {
             <CircleButton label="Previous image">
               <Arrow className="rotate-[225deg]" />
             </CircleButton>
-            <CircleButton label="Next image" variant="lime">
+            <CircleButton label="Next image" variant="accent">
               <Arrow className="rotate-45" />
             </CircleButton>
           </Reveal>
