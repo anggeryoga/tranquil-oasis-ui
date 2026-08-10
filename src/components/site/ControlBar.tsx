@@ -1,7 +1,7 @@
-import { Search, Bell, Facebook, Twitter, Instagram } from "lucide-react";
-import poolPatio from "@/assets/card-pool-patio.jpg";
-import roadside from "@/assets/card-roadside.jpg";
-import house from "@/assets/card-house.jpg";
+import { Search, Phone, Facebook, Instagram, MessageCircle } from "lucide-react";
+import outlet from "@/assets/gallery-outlet.jpg";
+import barista from "@/assets/gallery-barista.jpg";
+import equipment from "@/assets/gallery-equipment.jpg";
 import { Arrow, CircleButton, Reveal } from "./ui";
 
 export function ControlBar() {
@@ -10,17 +10,17 @@ export function ControlBar() {
       <div className="flex flex-wrap items-center gap-3">
         <div className="flex min-w-0 items-center gap-3 rounded-[16px] bg-surface p-2 pr-4">
           <img
-            src={poolPatio}
+            src={equipment}
             loading="lazy"
-            width={800}
-            height={640}
-            alt="Sun loungers by the pool"
+            width={900}
+            height={760}
+            alt="Peralatan kopi paket usaha Benice"
             className="h-9 w-20 shrink-0 rounded-[10px] object-cover"
           />
           <span className="text-[10px] leading-tight text-muted-foreground">
-            Unmatched
+            Paket usaha lengkap
             <br />
-            Natural Splendor
+            langsung jualan
           </span>
           <span className="hairline hidden size-8 shrink-0 place-items-center rounded-full text-[10px] sm:grid">
             ✳
@@ -29,7 +29,7 @@ export function ControlBar() {
 
         <div className="flex min-w-0 flex-1 items-center gap-3 rounded-[16px] bg-surface p-2">
           <div className="flex shrink-0 gap-1.5">
-            {[Facebook, Twitter, Instagram].map((Icon, i) => (
+            {[MessageCircle, Instagram, Facebook].map((Icon, i) => (
               <span
                 key={i}
                 className="grid size-7 place-items-center rounded-full bg-primary text-primary-foreground"
@@ -41,41 +41,41 @@ export function ControlBar() {
           <label className="flex min-w-0 flex-1 items-center gap-2 rounded-full bg-card px-4 py-2">
             <input
               type="search"
-              placeholder="Search..."
-              aria-label="Search retreats"
+              placeholder="Cari paket atau kota..."
+              aria-label="Cari paket usaha Benice Coffee"
               className="min-w-0 flex-1 bg-transparent text-[11px] outline-none placeholder:text-muted-foreground"
             />
             <Search className="size-3.5 shrink-0 text-muted-foreground" strokeWidth={1.5} />
           </label>
-          <CircleButton label="Notifications" variant="white">
-            <Bell className="size-3" strokeWidth={1.5} />
+          <CircleButton label="Telepon kami" variant="white">
+            <Phone className="size-3" strokeWidth={1.5} />
           </CircleButton>
-          <CircleButton label="Open" variant="white">
+          <CircleButton label="Buka" variant="white">
             <Arrow />
           </CircleButton>
         </div>
 
         <div className="flex items-center gap-3 rounded-[16px] bg-surface p-2 pl-4">
           <span className="text-[10px] leading-tight text-muted-foreground">
-            Embrace Nature's Wonders
+            340+ mitra di 21 kota
             <br />
-            with a Spectacular View
+            balik modal 4-7 bulan
           </span>
           <div className="hidden gap-1 sm:flex">
-            {[house, roadside, poolPatio].map((src, i) => (
+            {[outlet, barista, equipment].map((src, i) => (
               <img
                 key={i}
                 src={src}
                 loading="lazy"
-                width={800}
-                height={640}
+                width={900}
+                height={760}
                 alt=""
                 className="h-9 w-12 rounded-[8px] object-cover"
               />
             ))}
           </div>
-          <CircleButton label="Explore views" variant="outline" className="w-12 rounded-full">
-            <span className="text-[10px]">→</span>
+          <CircleButton label="Lihat mitra" variant="outline" className="w-12 rounded-full">
+            <Arrow />
           </CircleButton>
         </div>
       </div>
