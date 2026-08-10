@@ -2,15 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { ControlBar } from "@/components/site/ControlBar";
-import { Coziness } from "@/components/site/Coziness";
-import { PoolFeature } from "@/components/site/PoolFeature";
-import { Adventure } from "@/components/site/Adventure";
+import { Menu } from "@/components/site/Menu";
+import { Gallery } from "@/components/site/Gallery";
+import { Pricing } from "@/components/site/Pricing";
+import { JoinSteps } from "@/components/site/JoinSteps";
 import { Newsletter } from "@/components/site/Newsletter";
 import { Footer } from "@/components/site/Footer";
 
-const title = "TranquilQ — Private Retreats in Quiet Luxury";
+const title = "Benice Coffee — Paket Usaha Kopi Mulai Rp 4,9 Juta";
 const description =
-  "A boutique collection of private retreats: cinematic mountain cabins, desert houses and pools, designed for calm, spacious, unhurried stays.";
+  "Buka usaha kopi bersama Benice Coffee. Lima paket usaha lengkap dengan booth, peralatan, bahan baku, resep, dan pelatihan. Tanpa royalti bulanan.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,9 +33,10 @@ function Index() {
       <Navbar />
       <Hero />
       <ControlBar />
-      <Coziness />
-      <PoolFeature />
-      <Adventure />
+      <Menu />
+      <Gallery />
+      <Pricing />
+      <JoinSteps />
       <Newsletter />
       <Footer />
     </main>

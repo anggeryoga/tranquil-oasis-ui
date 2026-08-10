@@ -18,7 +18,7 @@ export function Navbar() {
             ))}
           </span>
         </span>
-        <Pill className="hidden sm:inline-flex">Get a Room</Pill>
+        <Pill className="hidden sm:inline-flex">Gabung Mitra</Pill>
       </div>
 
       <div className="flex items-center justify-center gap-2">
@@ -27,14 +27,14 @@ export function Navbar() {
           <rect x="9" y="3" width="6" height="6" rx="2" fill="currentColor" />
           <rect x="1" y="9" width="6" height="6" rx="2" fill="currentColor" />
         </svg>
-        <span className="text-[13px] font-medium tracking-tight">TranquilQ</span>
+        <span className="text-[13px] font-medium tracking-tight">Benice Coffee</span>
       </div>
 
       <div className="flex items-center justify-end gap-2">
-        <CircleButton label="Search">
+        <CircleButton label="Cari">
           <Search className="size-3.5" strokeWidth={1.5} />
         </CircleButton>
-        <Pill variant="outline">Web call</Pill>
+        <Pill variant="outline">Hubungi kami</Pill>
       </div>
     </motion.header>
   );

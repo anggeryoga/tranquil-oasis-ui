@@ -6,18 +6,18 @@ export function Newsletter() {
       <SectionHeading
         lines={[
           <>
-            The First <em className="italic">To Know</em>
+            Siap Jadi <em className="italic">Mitra</em>
           </>,
           <>
-            <em className="italic">Everything</em> Growth
+            <em className="italic">Benice</em> Coffee?
           </>,
         ]}
       />
       <Reveal delay={0.1} className="mt-6 flex flex-col items-center">
         <p className="text-center text-[11px] leading-relaxed text-muted-foreground">
-          Send your e-mail and we will
+          Tinggalkan e-mail Anda, tim kami
           <br />
-          send you news about us.
+          kirim proposal & simulasi keuntungan.
         </p>
         <form
           className="mt-8 flex w-full max-w-[330px] flex-col items-center gap-5"
@@ -26,12 +26,12 @@ export function Newsletter() {
           <input
             type="email"
             required
-            placeholder="E-mail"
-            aria-label="E-mail"
+            placeholder="Alamat e-mail"
+            aria-label="Alamat e-mail"
             className="w-full rounded-full bg-surface px-6 py-3 text-center text-[11px] outline-none placeholder:text-muted-foreground focus-visible:ring-1 focus-visible:ring-ring"
           />
           <Pill className="px-6">
-            Subscribe <Arrow />
+            Kirim proposal <Arrow />
           </Pill>
         </form>
       </Reveal>
