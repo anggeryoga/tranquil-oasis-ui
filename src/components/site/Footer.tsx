@@ -1,7 +1,7 @@
 export function Footer() {
   return (
     <footer className="flex flex-wrap items-center justify-between gap-3 py-14 text-[10px] text-muted-foreground">
-      <span>© {new Date().getFullYear()} TranquilQ</span>
+      <span>© {new Date().getFullYear()} Benice Coffee</span>
       <nav className="flex gap-5">
         <a href="#" className="story-link">
           Stays
@@ -13,7 +13,7 @@ export function Footer() {
           Contact
         </a>
       </nav>
-      <span>Privacy · Terms</span>
+      <span>Kebijakan Privasi · Syarat & Ketentuan</span>
     </footer>
   );
 }
