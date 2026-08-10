@@ -4,12 +4,12 @@ import { cn } from "@/lib/utils";
 
 export function Pill({
   children,
-  variant = "lime",
+  variant = "primary",
   className,
   as = "button",
 }: {
   children: ReactNode;
-  variant?: "lime" | "outline" | "white";
+  variant?: "primary" | "secondary" | "accent" | "outline" | "white";
   className?: string;
   as?: "button" | "div";
 }) {
@@ -21,7 +21,9 @@ export function Pill({
       transition={{ duration: 0.25 }}
       className={cn(
         "inline-flex h-8 items-center gap-2 rounded-full px-4 text-[11px] tracking-tight whitespace-nowrap",
-        variant === "lime" && "bg-accent text-accent-foreground",
+        variant === "primary" && "bg-primary text-primary-foreground",
+        variant === "secondary" && "bg-secondary text-secondary-foreground",
+        variant === "accent" && "bg-accent text-accent-foreground",
         variant === "outline" && "hairline bg-card text-foreground",
         variant === "white" && "bg-card/85 text-foreground backdrop-blur-md",
         className,
@@ -39,7 +41,7 @@ export function CircleButton({
   label,
 }: {
   children: ReactNode;
-  variant?: "lime" | "outline" | "white";
+  variant?: "primary" | "secondary" | "accent" | "outline" | "white";
   className?: string;
   label: string;
 }) {
@@ -51,7 +53,9 @@ export function CircleButton({
       transition={{ duration: 0.25 }}
       className={cn(
         "grid size-8 shrink-0 place-items-center rounded-full",
-        variant === "lime" && "bg-accent text-accent-foreground",
+        variant === "primary" && "bg-primary text-primary-foreground",
+        variant === "secondary" && "bg-secondary text-secondary-foreground",
+        variant === "accent" && "bg-accent text-accent-foreground",
         variant === "outline" && "hairline bg-card text-foreground",
         variant === "white" && "bg-card/85 text-foreground backdrop-blur-md",
         className,
