@@ -29,7 +29,7 @@ function OccupancyChart() {
               whileInView={{ height: `${b.v * 1.5}px` }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-              className="w-full rounded-t-[3px] bg-card"
+              className="w-full rounded-t-[3px] bg-primary"
             />
             <span className="text-[9px] text-muted-foreground">{b.d}</span>
           </div>

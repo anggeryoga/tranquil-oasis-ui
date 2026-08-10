@@ -32,7 +32,7 @@ export function ControlBar() {
             {[Facebook, Twitter, Instagram].map((Icon, i) => (
               <span
                 key={i}
-                className="grid size-7 place-items-center rounded-full bg-foreground text-background"
+                className="grid size-7 place-items-center rounded-full bg-primary text-primary-foreground"
               >
                 <Icon className="size-3" strokeWidth={1.5} />
               </span>
