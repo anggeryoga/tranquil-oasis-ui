@@ -27,33 +27,6 @@ export function ControlBar() {
           </span>
         </div>
 
-        <div className="flex min-w-0 flex-1 items-center gap-3 rounded-[16px] bg-surface p-2">
-          <div className="flex shrink-0 gap-1.5">
-            {[MessageCircle, Instagram, Facebook].map((Icon, i) => (
-              <span
-                key={i}
-                className="grid size-7 place-items-center rounded-full bg-primary text-primary-foreground"
-              >
-                <Icon className="size-3" strokeWidth={1.5} />
-              </span>
-            ))}
-          </div>
-          <label className="flex min-w-0 flex-1 items-center gap-2 rounded-full bg-card px-4 py-2">
-            <input
-              type="search"
-              placeholder="Cari paket atau kota..."
-              aria-label="Cari paket usaha Benice Coffee"
-              className="min-w-0 flex-1 bg-transparent text-[11px] outline-none placeholder:text-muted-foreground"
-            />
-            <Search className="size-3.5 shrink-0 text-muted-foreground" strokeWidth={1.5} />
-          </label>
-          <CircleButton label="Telepon kami" variant="white">
-            <Phone className="size-3" strokeWidth={1.5} />
-          </CircleButton>
-          <CircleButton label="Buka" variant="white">
-            <Arrow />
-          </CircleButton>
-        </div>
 
         <div className="flex items-center gap-3 rounded-[16px] bg-surface p-2 pl-4">
           <span className="text-[10px] leading-tight text-muted-foreground">
