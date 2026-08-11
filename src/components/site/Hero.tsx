@@ -64,19 +64,21 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-foreground/25 via-transparent to-foreground/20" />
 
-      <motion.h1
-        initial={{ opacity: 0, y: 18 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-        className="display absolute top-[8%] left-1/2 w-full -translate-x-1/2 px-6 text-center text-[clamp(1.9rem,6vw,5rem)] text-card"
-      >
-        <span className="block">
-          Buka Usaha <em className="font-normal italic">Kopi.</em>
-        </span>
-        <span className="block">
-          <em className="font-normal italic">Mulai Hari</em> Ini
-        </span>
-      </motion.h1>
+      {/*
+<motion.h1
+  initial={{ opacity: 0, y: 18 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+  className="display absolute top-[8%] left-1/2 w-full -translate-x-1/2 px-6 text-center text-[clamp(1.9rem,6vw,5rem)] text-card"
+>
+  <span className="block">
+    Buka Usaha <em className="font-normal italic">Kopi.</em>
+  </span>
+  <span className="block">
+    <em className="font-normal italic">Mulai Hari</em> Ini
+  </span>
+</motion.h1>
+*/}
 
       {tags.map((t, i) => (
         <FloatingTag key={t.label} {...t} index={i} />
