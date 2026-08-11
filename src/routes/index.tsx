@@ -5,6 +5,7 @@ import { ControlBar } from "@/components/site/ControlBar";
 import { Menu } from "@/components/site/Menu";
 import { Gallery } from "@/components/site/Gallery";
 import { Pricing } from "@/components/site/Pricing";
+import { Testimonials } from "@/components/site/Testimonials";
 import { JoinSteps } from "@/components/site/JoinSteps";
 import { Newsletter } from "@/components/site/Newsletter";
 import { Footer } from "@/components/site/Footer";
@@ -36,6 +37,7 @@ function Index() {
       <Menu />
       <Gallery />
       <Pricing />
+      <Testimonials />
       <JoinSteps />
       <Newsletter />
       <Footer />

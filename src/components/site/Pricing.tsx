@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Check } from "lucide-react";
 import { Arrow, Pill, Reveal, SectionHeading } from "./ui";
+import { waFor } from "@/lib/links";
 
 const packages = [
   {
@@ -100,7 +101,11 @@ export function Pricing() {
                 ))}
               </ul>
 
-              <Pill variant={p.featured ? "accent" : "primary"} className="mt-7 w-fit px-5">
+              <Pill
+                href={waFor(p.name)}
+                variant={p.featured ? "accent" : "primary"}
+                className="mt-7 w-fit px-5"
+              >
                 Ambil paket ini <Arrow />
               </Pill>
             </motion.article>

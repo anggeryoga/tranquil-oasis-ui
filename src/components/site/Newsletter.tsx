@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Arrow, Pill, Reveal, SectionHeading } from "./ui";
 
 export function Newsletter() {
+  const [sent, setSent] = useState(false);
+
   return (
     <section className="pt-32 pb-8 sm:pt-48">
       <SectionHeading
@@ -21,7 +24,10 @@ export function Newsletter() {
         </p>
         <form
           className="mt-8 flex w-full max-w-[330px] flex-col items-center gap-5"
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={(e) => {
+            e.preventDefault();
+            setSent(true);
+          }}
         >
           <input
             type="email"
@@ -30,8 +36,8 @@ export function Newsletter() {
             aria-label="Alamat e-mail"
             className="w-full rounded-full bg-surface px-6 py-3 text-center text-[11px] outline-none placeholder:text-muted-foreground focus-visible:ring-1 focus-visible:ring-ring"
           />
-          <Pill className="px-6">
-            Kirim proposal <Arrow />
+          <Pill type="submit" className="px-6">
+            {sent ? "Terkirim, kami hubungi Anda" : "Kirim proposal"} <Arrow />
           </Pill>
         </form>
       </Reveal>

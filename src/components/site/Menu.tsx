@@ -1,20 +1,11 @@
 import { motion } from "motion/react";
-import americano from "@/assets/menu-americano.jpg";
-import icedLatte from "@/assets/menu-iced-latte.jpg";
-import cappuccino from "@/assets/menu-cappuccino.jpg";
-import choco from "@/assets/menu-choco.jpg";
-import matcha from "@/assets/menu-matcha.jpg";
-import { Arrow, Pill, Reveal, SectionHeading } from "./ui";
-
-const menu = [
-  { src: americano, name: "Es Kopi Americano", desc: "Espresso murni, dingin & ringan", price: "Rp 10.000", tag: "Best seller" },
-  { src: icedLatte, name: "Es Kopi Susu Benice", desc: "Signature gula aren, creamy", price: "Rp 12.000", tag: "Signature" },
-  { src: cappuccino, name: "Hot Cappuccino", desc: "Espresso + microfoam lembut", price: "Rp 13.000" },
-  { src: choco, name: "Choco Ice Blend", desc: "Cokelat premium, whipped cream", price: "Rp 15.000" },
-  { src: matcha, name: "Matcha Latte", desc: "Matcha Jepang, susu segar", price: "Rp 15.000", tag: "Baru" },
-];
+import { Arrow, CircleButton, Pill, Reveal, SectionHeading } from "./ui";
+import { menuItems } from "./menuData";
+import { useSlider } from "./useSlider";
 
 export function Menu() {
+  const s = useSlider();
+
   return (
     <section id="menu" className="pt-28 sm:pt-40">
       <SectionHeading
@@ -29,10 +20,29 @@ export function Menu() {
         20+ varian racikan Benice Coffee dengan resep terstandar, harga terjangkau, dan margin sehat untuk mitra.
       </Reveal>
 
-      <div className="-mx-5 mt-12 flex snap-x gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:grid-cols-5">
-        {menu.map((m, i) => (
-          <Reveal key={m.name} delay={i * 0.06} className="w-[62vw] shrink-0 snap-start sm:w-auto">
-            <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3 }} className="h-full">
+      <div className="mt-8 flex justify-center gap-2">
+        <CircleButton label="Menu sebelumnya" onClick={() => s.scrollByCard(-1)}>
+          <Arrow className="rotate-[225deg]" />
+        </CircleButton>
+        <CircleButton label="Menu berikutnya" variant="accent" onClick={() => s.scrollByCard(1)}>
+          <Arrow className="rotate-45" />
+        </CircleButton>
+      </div>
+
+      <div
+        ref={s.ref}
+        className="-mx-3 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-3 pb-2 sm:mx-0 sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {menuItems.map((m, i) => (
+          <div key={m.name} className="w-[62vw] shrink-0 snap-start sm:w-[30%] lg:w-[19%]">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.5, delay: (i % 5) * 0.06 }}
+              className="h-full"
+            >
               <div className="relative overflow-hidden rounded-[16px]">
                 <motion.img
                   src={m.src}
@@ -58,12 +68,12 @@ export function Menu() {
                 <span className="shrink-0 text-[11px] font-medium">{m.price}</span>
               </div>
             </motion.div>
-          </Reveal>
+          </div>
         ))}
       </div>
 
       <Reveal delay={0.2} className="mt-10 flex justify-center">
-        <Pill className="px-6">
+        <Pill href="/menu" className="px-6">
           Lihat menu lengkap <Arrow />
         </Pill>
       </Reveal>

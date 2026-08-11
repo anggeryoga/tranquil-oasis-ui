@@ -4,6 +4,7 @@ import heroImg from "@/assets/benice-hero.jpg";
 import outlet from "@/assets/gallery-outlet.jpg";
 import barista from "@/assets/gallery-barista.jpg";
 import { Arrow, CircleButton, Pill } from "./ui";
+import { WHATSAPP } from "@/lib/links";
 
 const tags = [
   { label: "Modal kecil", top: "22%", left: "4%" },
@@ -82,10 +83,10 @@ export function Hero() {
       ))}
 
       <div className="absolute bottom-[38%] left-[12%] hidden gap-2 lg:flex">
-        <CircleButton label="Sebelumnya" variant="white">
+        <CircleButton label="Ke menu" variant="white" href="#menu">
           <Arrow className="rotate-[225deg]" />
         </CircleButton>
-        <CircleButton label="Berikutnya" variant="white">
+        <CircleButton label="Ke paket usaha" variant="white" href="#paket">
           <Arrow className="rotate-45" />
         </CircleButton>
       </div>
@@ -140,7 +141,7 @@ export function Hero() {
           <br />
           Rp 4,9jt
         </div>
-        <Pill>Gabung mitra</Pill>
+        <Pill href={WHATSAPP}>Gabung mitra</Pill>
       </motion.div>
 
       <motion.div
@@ -167,7 +168,7 @@ export function Hero() {
           </Pill>
         </div>
         <div className="mt-2 flex justify-start">
-          <CircleButton label="Perbesar video" variant="white" className="size-7">
+          <CircleButton label="Lihat galeri" variant="white" className="size-7" href="#galeri">
             <Arrow />
           </CircleButton>
         </div>

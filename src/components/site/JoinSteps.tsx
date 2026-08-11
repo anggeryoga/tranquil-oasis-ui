@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import owner from "@/assets/gallery-owner.jpg";
 import outlet from "@/assets/gallery-outlet.jpg";
 import { Arrow, CircleButton, Pill, Reveal } from "./ui";
+import { WHATSAPP } from "@/lib/links";
 
 const steps = [
   { n: "01", t: "Konsultasi gratis", d: "Hubungi tim kami, ceritakan lokasi dan modal yang tersedia." },
@@ -45,10 +46,10 @@ export function JoinSteps() {
             </p>
           </div>
           <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2">
-            <CircleButton label="Testimoni sebelumnya" variant="white">
+            <CircleButton label="Lihat testimoni" variant="white" href="#testimoni">
               <Arrow className="rotate-[225deg]" />
             </CircleButton>
-            <CircleButton label="Testimoni berikutnya" variant="white">
+            <CircleButton label="Semua testimoni mitra" variant="white" href="#testimoni">
               <Arrow className="rotate-45" />
             </CircleButton>
           </div>
@@ -92,10 +93,10 @@ export function JoinSteps() {
           ))}
         </ol>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Pill className="px-5">
+          <Pill href={WHATSAPP} className="px-5">
             Chat konsultan <Arrow />
           </Pill>
-          <Pill variant="outline">
+          <Pill href="/paket" variant="outline">
             Unduh proposal <Arrow className="rotate-90" />
           </Pill>
         </div>
