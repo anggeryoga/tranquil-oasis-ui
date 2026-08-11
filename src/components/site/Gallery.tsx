@@ -64,7 +64,7 @@ export function Gallery() {
                     <br />
                     tersebar di 21 kota
                   </span>
-                  <CircleButton label="Lihat sebaran outlet" variant="accent" className="size-6">
+                  <CircleButton label="Lihat sebaran outlet" variant="accent" className="size-6" href="#gabung">
                     <Arrow />
                   </CircleButton>
                 </div>

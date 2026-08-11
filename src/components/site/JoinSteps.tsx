@@ -46,10 +46,10 @@ export function JoinSteps() {
             </p>
           </div>
           <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2">
-            <CircleButton label="Testimoni sebelumnya" variant="white">
+            <CircleButton label="Lihat testimoni" variant="white" href="#testimoni">
               <Arrow className="rotate-[225deg]" />
             </CircleButton>
-            <CircleButton label="Testimoni berikutnya" variant="white">
+            <CircleButton label="Semua testimoni mitra" variant="white" href="#testimoni">
               <Arrow className="rotate-45" />
             </CircleButton>
           </div>
