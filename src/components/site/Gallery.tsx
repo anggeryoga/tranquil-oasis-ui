@@ -1,16 +1,12 @@
 import { motion } from "motion/react";
-import outlet from "@/assets/gallery-outlet.jpg";
-import barista from "@/assets/gallery-barista.jpg";
-import equipment from "@/assets/gallery-equipment.jpg";
-import owner from "@/assets/gallery-owner.jpg";
 import hero from "@/assets/benice-hero.jpg";
 import { Arrow, CircleButton, Pill, Reveal, SectionHeading } from "./ui";
 
 const shots = [
-  { src: outlet, alt: "Booth Benice Coffee di pinggir jalan", badge: "Booth outlet", span: "lg:col-span-5", h: "h-[300px] sm:h-[380px] lg:h-[420px]" },
-  { src: barista, alt: "Barista menakar kopi di booth", badge: "Training barista", span: "lg:col-span-3", h: "h-[240px] sm:h-[300px] lg:mt-8 lg:h-[330px]" },
-  { src: equipment, alt: "Peralatan kopi lengkap paket usaha", badge: "Paket alat", span: "lg:col-span-2", h: "h-[240px] sm:h-[300px] lg:mt-12 lg:h-[280px]" },
-  { src: owner, alt: "Mitra Benice Coffee berdiri di depan boothnya", badge: "Cerita mitra", span: "lg:col-span-2", h: "h-[240px] sm:h-[300px] lg:h-[320px]" },
+  { src: "https://cdn.anggeraji.web.id/lp-benicecoffee/galeryy/booth-kontainer.webp", alt: "Booth kontainer", badge: "booth-kontainer.webp", span: "lg:col-span-5", h: "h-[300px] sm:h-[380px] lg:h-[420px]" },
+  { src: "https://cdn.anggeraji.web.id/lp-benicecoffee/galeryy/booth-portable.webp", alt: "Booth portable", badge: "booth-portable.webp", span: "lg:col-span-3", h: "h-[240px] sm:h-[300px] lg:mt-8 lg:h-[330px]" },
+  { src: "https://cdn.anggeraji.web.id/lp-benicecoffee/galeryy/marketing-kol.webp", alt: "Marketing kol", badge: "marketing-kol.webp", span: "lg:col-span-2", h: "h-[240px] sm:h-[300px] lg:mt-12 lg:h-[280px]" },
+  { src: "https://cdn.anggeraji.web.id/lp-benicecoffee/galeryy/opening.webp", alt: "Opening", badge: "opening.webp", span: "lg:col-span-2", h: "h-[240px] sm:h-[300px] lg:h-[320px]" },
 ];
 
 export function Gallery() {
