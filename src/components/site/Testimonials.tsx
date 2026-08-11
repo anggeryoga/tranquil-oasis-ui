@@ -70,7 +70,7 @@ export function Testimonials() {
 
       <div
         ref={s.ref}
-        className="-mx-3 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-3 pb-2 sm:mx-0 sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="mt-8 flex snap-x snap-mandatory justify-start gap-4 overflow-x-auto px-[9vw] pb-2 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {testimonials.map((t, i) => (
           <motion.article
@@ -79,7 +79,7 @@ export function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-            className="hairline flex w-[82vw] shrink-0 snap-start flex-col rounded-[18px] bg-card p-5 sm:w-[46%] lg:w-[31%]"
+            className="hairline flex w-[82vw] min-w-[82vw] shrink-0 snap-center flex-col rounded-[18px] bg-card p-5 sm:w-[46%] sm:min-w-0 sm:snap-none lg:w-[31%]"
           >
             <div className="flex items-center gap-1 text-accent-foreground">
               {[0, 1, 2, 3, 4].map((n) => (
