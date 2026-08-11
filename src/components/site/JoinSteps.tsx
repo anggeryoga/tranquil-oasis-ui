@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import owner from "@/assets/gallery-owner.jpg";
 import outlet from "@/assets/gallery-outlet.jpg";
 import { Arrow, CircleButton, Pill, Reveal } from "./ui";
+import { WHATSAPP } from "@/lib/links";
 
 const steps = [
   { n: "01", t: "Konsultasi gratis", d: "Hubungi tim kami, ceritakan lokasi dan modal yang tersedia." },
@@ -92,10 +93,10 @@ export function JoinSteps() {
           ))}
         </ol>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Pill className="px-5">
+          <Pill href={WHATSAPP} className="px-5">
             Chat konsultan <Arrow />
           </Pill>
-          <Pill variant="outline">
+          <Pill href="/paket" variant="outline">
             Unduh proposal <Arrow className="rotate-90" />
           </Pill>
         </div>
