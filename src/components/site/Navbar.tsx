@@ -1,6 +1,8 @@
-import { Search } from "lucide-react";
+import { Coffee } from "lucide-react";
 import { motion } from "motion/react";
+import { Link } from "@tanstack/react-router";
 import { Pill, CircleButton } from "./ui";
+import { WHATSAPP } from "@/lib/links";
 
 export function Navbar() {
   return (
@@ -18,23 +20,30 @@ export function Navbar() {
             ))}
           </span>
         </span>
-        <Pill className="hidden sm:inline-flex">Gabung Mitra</Pill>
+        <Pill href="#gabung" className="hidden sm:inline-flex">
+          Gabung Mitra
+        </Pill>
+        <Pill href="#paket" variant="outline" className="sm:hidden">
+          Paket
+        </Pill>
       </div>
 
-      <div className="flex items-center justify-center gap-2">
+      <Link to="/" className="flex items-center justify-center gap-2">
         <svg viewBox="0 0 16 16" className="size-4 shrink-0" aria-hidden>
           <rect x="1" y="1" width="6" height="6" rx="2" fill="currentColor" />
           <rect x="9" y="3" width="6" height="6" rx="2" fill="currentColor" />
           <rect x="1" y="9" width="6" height="6" rx="2" fill="currentColor" />
         </svg>
         <span className="text-[13px] font-medium tracking-tight">Benice Coffee</span>
-      </div>
+      </Link>
 
       <div className="flex items-center justify-end gap-2">
-        <CircleButton label="Cari">
-          <Search className="size-3.5" strokeWidth={1.5} />
+        <CircleButton label="Lihat menu" href="/menu">
+          <Coffee className="size-3.5" strokeWidth={1.5} />
         </CircleButton>
-        <Pill variant="outline">Hubungi kami</Pill>
+        <Pill href={WHATSAPP} variant="outline">
+          Hubungi kami
+        </Pill>
       </div>
     </motion.header>
   );
