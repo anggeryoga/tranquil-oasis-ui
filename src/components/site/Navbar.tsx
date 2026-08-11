@@ -29,11 +29,11 @@ export function Navbar() {
       </div>
 
       <Link to="/" className="flex items-center justify-center gap-2">
-        <svg viewBox="0 0 16 16" className="size-4 shrink-0" aria-hidden>
-          <rect x="1" y="1" width="6" height="6" rx="2" fill="currentColor" />
-          <rect x="9" y="3" width="6" height="6" rx="2" fill="currentColor" />
-          <rect x="1" y="9" width="6" height="6" rx="2" fill="currentColor" />
-        </svg>
+        <img
+          src="https://cdn.anggeraji.web.id/lp-benicecoffee/logo/logo.png"
+          alt="Benice Coffee logo"
+          className="h-6 w-auto shrink-0 object-contain"
+        />
         <span className="text-[13px] font-medium tracking-tight">Benice Coffee</span>
       </Link>
 
