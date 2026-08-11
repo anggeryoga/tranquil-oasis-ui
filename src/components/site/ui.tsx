@@ -7,20 +7,39 @@ export function Pill({
   variant = "primary",
   className,
   as = "button",
+  href,
+  onClick,
+  type = "button",
+  ariaLabel,
 }: {
   children: ReactNode;
   variant?: "primary" | "secondary" | "accent" | "outline" | "white";
   className?: string;
   as?: "button" | "div";
+  href?: string;
+  onClick?: () => void;
+  type?: "button" | "submit";
+  ariaLabel?: string;
 }) {
-  const Comp = as === "div" ? motion.div : motion.button;
+  const Comp = href ? motion.a : as === "div" ? motion.div : motion.button;
+  const extra = href
+    ? {
+        href,
+        ...(href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {}),
+      }
+    : as === "div"
+      ? {}
+      : { type };
   return (
     <Comp
+      {...(extra as Record<string, unknown>)}
+      onClick={onClick}
+      aria-label={ariaLabel}
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.25 }}
       className={cn(
-        "inline-flex h-8 items-center gap-2 rounded-full px-4 text-[11px] tracking-tight whitespace-nowrap",
+        "inline-flex h-9 cursor-pointer items-center gap-2 rounded-full px-4 text-[11px] tracking-tight whitespace-nowrap transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none sm:h-8",
         variant === "primary" && "bg-primary text-primary-foreground",
         variant === "secondary" && "bg-secondary text-secondary-foreground",
         variant === "accent" && "bg-accent text-accent-foreground",
@@ -39,20 +58,32 @@ export function CircleButton({
   variant = "outline",
   className,
   label,
+  onClick,
+  href,
 }: {
   children: ReactNode;
   variant?: "primary" | "secondary" | "accent" | "outline" | "white";
   className?: string;
   label: string;
+  onClick?: () => void;
+  href?: string;
 }) {
+  const Comp = href ? motion.a : motion.button;
   return (
-    <motion.button
+    <Comp
+      {...(href
+        ? ({ href, ...(href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {}) } as Record<
+            string,
+            unknown
+          >)
+        : ({ type: "button" } as Record<string, unknown>))}
+      onClick={onClick}
       aria-label={label}
       whileHover={{ scale: 1.08 }}
       whileTap={{ scale: 0.95 }}
       transition={{ duration: 0.25 }}
       className={cn(
-        "grid size-8 shrink-0 place-items-center rounded-full",
+        "grid size-9 shrink-0 cursor-pointer place-items-center rounded-full focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none sm:size-8",
         variant === "primary" && "bg-primary text-primary-foreground",
         variant === "secondary" && "bg-secondary text-secondary-foreground",
         variant === "accent" && "bg-accent text-accent-foreground",
@@ -62,7 +93,7 @@ export function CircleButton({
       )}
     >
       {children}
-    </motion.button>
+    </Comp>
   );
 }
 
